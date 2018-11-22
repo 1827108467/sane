@@ -1,0 +1,55 @@
+<style>
+    .odiv{
+        width:100px;
+        height:100px;
+        background:red;
+    }
+
+    .sdiv{
+        width:10px;
+        height:10px;
+        background:yellow;
+    }
+</style>
+<div id="odiv" class="odiv">
+    <div id="sdiv" class="sdiv">
+    </div>
+</div>
+
+<script language="javascript">
+window.onload = function(){
+    var odiv = document.getElementById('odiv');
+    odiv.onmouseover = function(){
+        startMover(0);
+    }
+    odiv.onmouseout = function(){
+        startMover(-200);
+    }
+}
+var timer = null;
+function startMover(a){//速度和目标值
+    clearInterval(timer);//执行当前动画同时清除之前的动画
+    var odiv = document.getElementById('odiv');
+timer = setInterval(function(){
+    var speed = (a-odiv.offsetLeft)/10;//缓冲动画的速度参数变化值
+//如果速度是大于0，说明是向右走，那么就向上取整
+    speed = speed>0?Math.ceil(speed):Math.floor(speed);
+//Math.floor();向下取整
+    if(odiv.offsetLeft == a){
+     clearInterval(timer);
+    }
+else{
+     odiv.style.left = odiv.offsetLeft+speed+'px';
+ }
+},30);
+}
+
+fetch('https://admin.xiaoyinka.com/wxapp/material/index', {mode:"no-cors",credentials: 'include'}).then(function (response) {
+    console.log("存在一个问题，状态码为：" + response.status);
+    console.log(response)
+    console.log(response.body)
+}).catch(function (err) {
+  console.log("Fetch错误:" + err);
+})
+
+</script>

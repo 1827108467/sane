@@ -1,11 +1,13 @@
 <style>
     .running{
         height:88px;
-        width:87px;
+        width:88px;
         position:absolute;
-        top:30%;
+        top:50%;
         left:50%;
-        margin-left:-87px;
+        transform: translate(-50%, -50%);
+        -webkit-transform: translate(-50%,-50%);
+        /* margin-left:-87px; */
         background:url(images/loading.png) no-repeat 0 0;
         visibility:hidden;
         animation:run 1400ms steps(1,end) infinite 0s;	

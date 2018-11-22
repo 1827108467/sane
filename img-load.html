@@ -1,0 +1,47 @@
+<style>
+    .running{
+        height:88px;
+        width:87px;
+        position:absolute;
+        top:30%;
+        left:50%;
+        margin-left:-87px;
+        background:url(images/loading.png) no-repeat 0 0;
+        visibility:hidden;
+        animation:run 1400ms steps(1,end) infinite 0s;	
+        -webkit-animation:run 1400ms steps(1,end) infinite 0s;				
+    }
+
+    @keyframes run {	
+        0% {
+            visibility:visible;
+            background-position:0 0
+        }
+
+        16.7% {
+            background-position:0 -91px;
+        }
+
+        33.4% {
+            background-position:0 -183px;
+        }
+
+        50.1% {
+            background-position:0 -275px;
+        }
+
+        66.8% {
+            background-position:0 -369px;
+        }
+
+        83.5% {
+            background-position:0 -462px;
+        }
+
+        100% {
+            background-position:0 0;
+        }	
+    }
+</style>
+
+<div class="running"></div>

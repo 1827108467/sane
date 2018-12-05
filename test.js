@@ -16,10 +16,10 @@
 // console.log(num2);//->Uncaught ReferenceError:num2 is not defined 
 // num2=12;//不能预解释
 
-var a = [1,2,3];
-var b = [1,2,3];
+var a = [1, 2, 3];
+var b = [1, 2, 3];
 var c = "1,2,3";
 
-console.log( a == c );        // true
-console.log( b == c );        // true
-console.log( a == b );        // false
+console.log(a == c); // true
+console.log(b == c); // true
+console.log(a == b); // false

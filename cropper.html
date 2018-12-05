@@ -1,0 +1,31 @@
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.4.3/cropper.min.css" />
+    <script src="http://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.4.3/cropper.min.js"></script>
+</head>
+<div class="box">
+    <img id="aaa" src="images/loading.png">
+</div>
+<script>
+/*     $('#aaa').cropper({
+        aspectRatio: 16 / 9,
+        viewMode:1,
+        crop: function (e) {
+            console.log(e);
+        }
+    }); */
+    var imgObj = document.getElementById('aaa');
+    var cropper = new Cropper(imgObj, {
+        aspectRatio: 16 / 9,
+        viewMode:1,
+        crop: function (e) {
+            console.log(e.detail.x);
+            console.log(e.detail.y);
+            console.log(e.detail.width);
+            console.log(e.detail.height);
+            console.log(e.detail.rotate);
+            console.log(e.detail.scaleX);
+            console.log(e.detail.scaleY);
+        }
+    });
+</script>
